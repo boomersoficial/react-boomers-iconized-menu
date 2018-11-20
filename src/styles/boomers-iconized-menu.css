@@ -19,6 +19,7 @@
   min-width: 280px;
   float: right;
   display: none;
+  border-right: 1px solid black;
 }
 
 .boomers-menu-content-area > div {
@@ -28,7 +29,6 @@
 .boomers-menu-content-area.selected {
   display: block;
 }
-
 
 #boomers-menu-icon-area {
   display: inline-block;
@@ -61,7 +61,5 @@
 }
 
 #boomers-menu-icon-area ul li:hover {
-  transform: scale(1.4);
-  color: rgba(248, 96, 96, 0.774);
-
+  color: rgba(135, 196, 250, 1);
 }

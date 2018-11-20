@@ -1,16 +1,8 @@
 import React from 'react';
 
-function IconMenuItem ({ icon, onClick, position }) {
-  var positionClass = '';
-
-  const isPositionDefined = position !== null && position !== undefined;
-  if (isPositionDefined && position === 'end') {
-    positionClass = 'menuItemAtEnd'
-  }
-  
-
+function IconMenuItem ({ icon, onClick }) {
   return (
-    <li onClick={onClick} className={positionClass}>
+    <li onClick={onClick}>
       <i className={icon} />
     </li>
   );

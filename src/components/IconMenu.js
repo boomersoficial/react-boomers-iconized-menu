@@ -28,10 +28,12 @@ class IconMenu extends Component {
     return React.Children.map(this.props.children, child => {
       
       if (child.type.name === "IconMenuItem") {
+
         return (
           <IconMenuItem 
             icon={child.props.icon} 
-            position={child.props.position}
+            color={this.props.iconColor}
+            onHoverColor={this.props.iconColorOnHover}
             onClick={() => this.selectMenuItem(child.props.icon)}  />
         );
       }
