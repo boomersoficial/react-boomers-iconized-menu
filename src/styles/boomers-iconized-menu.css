@@ -1,0 +1,67 @@
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#boomers-menu-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: auto;
+  z-index: 1000;
+}
+
+.boomers-menu-content-area {
+  height: 100%;
+  min-width: 280px;
+  float: right;
+  display: none;
+}
+
+.boomers-menu-content-area > div {
+  height: inherit;
+}
+
+.boomers-menu-content-area.selected {
+  display: block;
+}
+
+
+#boomers-menu-icon-area {
+  display: inline-block;
+  height: 100%;
+  min-width: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#boomers-menu-icon-area ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: scroll;
+  list-style: none;
+}
+
+#boomers-menu-icon-area ul li {
+  display: block;
+  text-align: center;
+  width: 100%;
+  background: 0;
+  border: 0;
+  font-size: 35px;
+  padding-bottom: 15px;
+  color: white;
+}
+
+#boomers-menu-icon-area ul li:first-child  {
+  padding-top: 15px;
+}
+
+#boomers-menu-icon-area ul li:hover {
+  transform: scale(1.4);
+  color: rgba(248, 96, 96, 0.774);
+
+}

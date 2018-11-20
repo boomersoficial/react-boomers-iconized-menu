@@ -1,14 +1,7 @@
-import React from 'react';
+import IconMenu from './components/IconMenu';
+import IconMenuItem from './components/IconMenuItem';
 
-import './styles/boomers-iconized-menu.css';
-
-class Fancy extends React.Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    );
-  }
-}
-export default Fancy;
+export {
+  IconMenu,
+  IconMenuItem
+};
