@@ -19,7 +19,7 @@
   min-width: 280px;
   float: right;
   display: none;
-  border-right: 1px solid black;
+  box-shadow: 4px 0px 3px rgba(50, 50, 50, 0.75);
 }
 
 .boomers-menu-content-area > div {
