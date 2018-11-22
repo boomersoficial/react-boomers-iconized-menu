@@ -1,8 +1,8 @@
 {
   "name": "boomers-iconized-menu",
   "version": "1.0.0",
-  "description": "",
-  "author": "",
+  "description": "React Menu Component - Sidebar with icons and multiple panes",
+  "author": "boomers",
   "license": "ISC",
   "main": "build/index.js",
   "scripts": {
