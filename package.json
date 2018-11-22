@@ -11,7 +11,8 @@
     "build": "webpack"
   },
   "dependencies": {
-    "react": "^16.6.3"
+    "react": "^16.6.3",
+    "uuid": "^3.3.2"
   },
   "peerDependencies": {
     "react": "^16.6.3"

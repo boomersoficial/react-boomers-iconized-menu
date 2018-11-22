@@ -1,8 +1,8 @@
 import React from 'react';
 
-function IconMenuItem ({ icon, onClick }) {
+function IconMenuItem ({ icon, onClick, itemKey }) {
   return (
-    <li onClick={onClick}>
+    <li onClick={onClick} >
       <i className={icon} />
     </li>
   );

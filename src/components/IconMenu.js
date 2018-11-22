@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import IconMenuItem from './IconMenuItem';
+import uuidv4 from 'uuid/v4';
 
 import '../styles/boomers-iconized-menu.css';
 
@@ -7,50 +8,61 @@ class IconMenu extends Component {
 
   constructor () {
     super();
-    this.renderMenuIcons = this.renderMenuIcons.bind(this);
+
     this.renderMenuContent = this.renderMenuContent.bind(this);
     this.selectMenuItem = this.selectMenuItem.bind(this);
+
+    this.injectedItems = [];
   }
 
   componentDidMount () {
     this.setState({ selectedMenuItem: null });
+    this.injectedItems = this.injectItemsBehaviour();
   }
 
-  selectMenuItem(menuItemId) {
-    if (this.state.selectedMenuItem === menuItemId) {
-      this.setState({ selectedMenuItem: null });  
-    } else {
-      this.setState({ selectedMenuItem: menuItemId });
-    }
-  }
-
-  renderMenuIcons() {
-    return React.Children.map(this.props.children, child => {
+  injectItemsBehaviour () {
+    const injectedItems = React.Children.map(this.props.children, child => {
       
       if (child.type.name === "IconMenuItem") {
+        const itemKey = uuidv4();
 
         return (
           <IconMenuItem 
             icon={child.props.icon} 
             color={this.props.iconColor}
             onHoverColor={this.props.iconColorOnHover}
-            onClick={() => this.selectMenuItem(child.props.icon)}  />
+            key={itemKey.toString()}
+            itemKey={itemKey}
+            onClick={() => this.selectMenuItem(itemKey)}>
+
+            {child.props.children}  
+          </IconMenuItem>
         );
       }
       
       return child;
     });
+
+    return injectedItems;
+  }
+
+  selectMenuItem(menuItemKey) {
+    if (this.state.selectedMenuItem === menuItemKey) {
+      this.setState({ selectedMenuItem: null });  
+    } else {
+      this.setState({ selectedMenuItem: menuItemKey });
+    }
   }
 
   renderMenuContent() {
     const self = this;
 
-    return React.Children.map(this.props.children, child => {
-      
+    return this.injectedItems.map(child => {
       const content = child.props.children? child.props.children : '';
+
       var isVisible = false;
       
-      if (self.state !== null && self.state.selectedMenuItem === child.props.icon) {
+      if (self.state && self.state.selectedMenuItem === child.props.itemKey) {
         isVisible = true;
       }
 
@@ -60,7 +72,7 @@ class IconMenu extends Component {
       }
       
       return (
-        <div className={classes}>
+        <div className={classes} key={child.props.itemKey}>
           { content }    
         </div>
       );
@@ -70,9 +82,9 @@ class IconMenu extends Component {
   render () {
     return (
       <div id='boomers-menu-wrapper'>
-        <div id="boomers-menu-icon-area">
+        <div id="boomers-menu-icon-area" >
           <ul>
-           {this.renderMenuIcons()}
+           {this.injectedItems}
           </ul>
         </div>
 
