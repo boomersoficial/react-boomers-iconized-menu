@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "React Menu Component - Sidebar with icons and multiple panes",
   "author": "boomers",
-  "license": "ISC",
+  "license": "MIT",
+  "homepage": "https://github.com/boomersoficial/boomers-iconized-menu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boomersoficial/boomers-iconized-menu.git"
+  },
   "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
