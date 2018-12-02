@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import IconMenuItem from './IconMenuItem';
+import IconMenuItemType from './IconMenuItemType';
 import uuidv4 from 'uuid/v4';
 
 import '../styles/boomers-iconized-menu.css';
@@ -24,7 +25,22 @@ class IconMenu extends Component {
     const injectedItems = React.Children.map(this.props.children, child => {
       
       if (child.type.name === "IconMenuItem") {
+
         const itemKey = uuidv4();
+        const itemType = child.props.type;
+        const hasCustomBehaviour = child.props.onClick;
+        
+        let behaviour = null;
+        if (!hasCustomBehaviour) {
+          behaviour = () => {
+            this.selectMenuItem(itemKey);
+          }
+        } else {
+          behaviour = () => {
+            this.selectMenuItem(itemKey);
+            child.props.onClick();
+          }
+        }
 
         return (
           <IconMenuItem 
@@ -33,7 +49,8 @@ class IconMenu extends Component {
             onHoverColor={this.props.iconColorOnHover}
             key={itemKey.toString()}
             itemKey={itemKey}
-            onClick={() => this.selectMenuItem(itemKey)}>
+            itemType={itemType}
+            onClick={behaviour}>
 
             {child.props.children}  
           </IconMenuItem>
@@ -58,6 +75,11 @@ class IconMenu extends Component {
     const self = this;
 
     return this.injectedItems.map(child => {
+      const itemType = child.props.itemType;
+      if (itemType === IconMenuItemType.Action) { 
+        return;
+      }
+
       const content = child.props.children? child.props.children : '';
 
       var isVisible = false;

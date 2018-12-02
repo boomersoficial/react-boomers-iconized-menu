@@ -28,19 +28,28 @@ Tadaaaa!
 
 ```
 <IconMenu>
-  <IconMenuItem icon="fab fa-apple">
+  <IconMenuItem 
+    icon="fab fa-apple" 
+    type={IconMenuItemType.Panel} >
     <div>
       You cool content!
     </div>
   </IconMenuItem>
 
-  <IconMenuItem icon="fab fa-aws">
-    <div>
-      More bad-ass content
-    </div>
-  </IconMenuItem>
+  <IconMenuItem icon="fab fa-aws" 
+    type={IconMenuItemType.Action}
+    onClick={() => { console.log('do some custom stuff'); }} />
+
 </IconMenu>
 ```
+
+## IconMenuItemType's
+
+There's two types of IconMenuItem:
+
+**  IconMenuItemType.Panel: will open a side panel with the content you placed inside IconmenuItem
+**  IconMenuItemType.Action: will trigger the action you placed inside onClick
+
 
 ## Styling - CSS
 
@@ -83,6 +92,16 @@ Default is: rgba(135, 196, 250, 1);
 ```
 #boomers-menu-icon-area ul li:hover {
   color: pink;
+}
+```
+
+### Icons size
+
+Default is: font-size: 35px;
+
+```
+#boomers-menu-icon-area ul li {
+  font-size: 100px;
 }
 ```
 
