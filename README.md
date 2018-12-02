@@ -47,8 +47,8 @@ Tadaaaa!
 
 There's two types of IconMenuItem:
 
-**  IconMenuItemType.Panel: will open a side panel with the content you placed inside IconmenuItem
-**  IconMenuItemType.Action: will trigger the action you placed inside onClick
+- IconMenuItemType.Panel: will open a side panel with the content you placed inside IconmenuItem
+- IconMenuItemType.Action: will trigger the action you placed inside onClick
 
 
 ## Styling - CSS
