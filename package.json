@@ -1,13 +1,13 @@
 {
-  "name": "boomers-iconized-menu",
+  "name": "react-boomers-iconized-menu",
   "version": "1.1.1",
   "description": "React Menu Component - Sidebar with icons and multiple panes",
   "author": "boomers",
   "license": "MIT",
-  "homepage": "https://github.com/boomersoficial/boomers-iconized-menu",
+  "homepage": "https://github.com/boomersoficial/react-boomers-iconized-menu",
   "repository": {
     "type": "git",
-    "url": "https://github.com/boomersoficial/boomers-iconized-menu.git"
+    "url": "https://github.com/boomersoficial/react-boomers-iconized-menu.git"
   },
   "main": "build/index.js",
   "scripts": {
