@@ -14,7 +14,7 @@ multiple panes and is easy to use and customize.
 
 Install it via npm:
 ```
-npm i boomers-iconized-menu
+npm i react-boomers-iconized-menu
 ```
 
 Add the desired version of font-awesome to your app:
